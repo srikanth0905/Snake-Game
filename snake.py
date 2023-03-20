@@ -19,11 +19,17 @@ class Snake(Turtle):
     def create_snake(self):
         # creating 3 turtle/squares which will form snake and placing them side by side to each other
         for position in STARTING_POSITION:
-            new_segment = Turtle(shape="square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        new_segment = Turtle(shape="square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
 
     def move(self):
         # moving the last block to the second-last block, so the rest of body follows snake's head
