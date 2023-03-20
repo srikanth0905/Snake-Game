@@ -8,9 +8,10 @@ RIGHT = 0
 LEFT = 180
 
 
-class Snake:
+class Snake(Turtle):
 
     def __init__(self):
+        super().__init__()
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
