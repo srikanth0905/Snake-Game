@@ -39,7 +39,6 @@ class Snake(Turtle):
         self.create_snake()
         self.head = self.segments[0]
 
-
     def move(self):
         # moving the last block to the second-last block, so the rest of body follows snake's head
         # the range in for loop is (last block should move, to which new position, by how much block)
